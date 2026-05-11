@@ -24,19 +24,21 @@
 # Monitor            200.00$       166.00$
 #
 
-NAME, PRICE = 10, 15
+NAME, PRICE = 15, 13
 
 line = "-" * (NAME + PRICE * 2)
-row_template = f"{{:<{NAME}}}{{:>{PRICE}.2f}}{{:>{PRICE}.2f}}"
+row_template = f"{{:<{NAME}}}{{:>{PRICE}}}{{:>{PRICE}}}"
 header_template = f"{line}\n{{:<{NAME}}}{{:>{PRICE}}}{{:>{PRICE}}}\n{line}"
 
 products = [["Laptop", 1200], ["Mouse", 25], ["Keyboard", 75], ["Monitor", 200]]
 
 percent = 17
 
+for i, v in enumerate(products):
+    v.append(v[1] * (1 - percent / 100))
+    
+
 print(header_template.format("Товар", "Старая цена", "Новая цена"))
 
-for product, price in products:
-    nprice = price * (1 - percent / 100)
-
-    print(row_template.format(product, price, nprice))
+for product, price, nprice in products:
+    print(row_template.format(product.ljust(NAME, '.'), f"${price:.2f}", f"${nprice:.2f}"))
