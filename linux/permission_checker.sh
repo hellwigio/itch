@@ -1,3 +1,3 @@
 #!/bin/bash
 
-chmod +x ./*.sh
+chmod +x /opt/060326-ptm/hellwig/*.sh
