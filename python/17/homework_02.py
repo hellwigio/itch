@@ -23,15 +23,6 @@ set2 = {4, 7}
 Подмножество: False
 """
 
-def is_subset(set1, set2):
-    return set2.issubset(set1)
-
-
-def difference(set1, set2):
-    return set1.difference(set2)
-
-
-
 test_cases = [
     ({2, 3, 4, 5, 6}, {4, 5}),
     ({2, 3, 4, 5, 6}, {4, 7}),
