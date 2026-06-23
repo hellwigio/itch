@@ -290,37 +290,41 @@ sudo nano /home/ec2-user/backup_logs.sh
 #!/bin/bash
 # выполнять скрипт через bash
 
-LOG_DIR="/var/log/httpd"
 # директория с логами Apache
+LOG_DIR="/var/log/httpd"
 
-LOG_FILE="access_log"
-# файл access log
+# директория для архивов
+BACKUP_DIR="/home/ec2-user/Backup_httpd"
 
-BACKUP_DIR="/home/ec2-user/backups"
-# директория для архивов, отдельно от /var/log/httpd
-
-MAX_DAYS=3
 # хранить архивы 3 дня
+MAX_BACKUP=3
 
-DATE=$(date +%Y%m%d)
 # текущая дата для имени архива
+DATE=$(date '+%Y%m%d-%T')
 
-ARCHIVE="$BACKUP_DIR/$LOG_FILE-$DATE.tar.gz"
 # полный путь к архиву
+ARCHIVE="$BACKUP_DIR"/backup_httpd_logs-"$DATE".tar.gz
 
+# создать директорию, если ее нет, без ошибки если уже существует
 mkdir -p "$BACKUP_DIR"
-# -p — создать директорию, если ее нет, без ошибки если уже существует
 
-tar -czf "$ARCHIVE" "$LOG_DIR/$LOG_FILE"
+# создать архив
+tar -czf "$ARCHIVE" "$LOG_DIR"/*
 # -c — создать архив
 # -z — сжать gzip
 # -f — указать имя файла архива
 
-truncate -s 0 "$LOG_DIR/$LOG_FILE"
-# -s 0 — очистить лог, установив размер файла в 0 байт
+# остановить Apache
+systemctl stop httpd.service
 
-find "$BACKUP_DIR" -type f -name "$LOG_FILE-*.tar.gz" -mtime +"$MAX_DAYS" -exec rm {} \;
-# найти архивы старше MAX_DAYS и удалить
+# очистить логи
+rm -rf "$LOG_DIR"/*
+
+# запустить Apache
+systemctl start httpd.service
+
+# найти архивы старше MAX_BACKUP и удалить
+find "$BACKUP_DIR" -type f -name "*.tar.gz" -mtime +"$MAX_BACKUP" -exec rm {} \;
 ```
 
 Сделали скрипт исполняемым:
