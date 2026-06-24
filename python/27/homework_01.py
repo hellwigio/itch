@@ -1,4 +1,4 @@
-""" 01 Фильтрация по ключевому слову
+"""01 Фильтрация по ключевому слову
 
 Напишите программу, которая
 - ищет в файле все строки, содержащие указанное пользователем слово,
@@ -18,24 +18,26 @@
 Строки, содержащие 'error', сохранены в <keyword>_<original_filename>.
 
 """
+
 import os
+
 
 def find_keyword(filename: str, keyword: str) -> None:
     if not os.path.isfile(filename):
         print(f'\nFile "{filename}" not found')
         return
 
-    with open(f'{keyword}_{filename}', 'w') as output:
-        with open(filename, 'r') as source:
-             for line in source:
+    with open(f"{keyword}_{filename}", "w") as output:
+        with open(filename, "r") as source:
+            for line in source:
                 if keyword in line:
                     output.write(line)
 
-    print(f'Строки, содержащие \'{keyword}\', сохранены в {keyword}_{filename}.')
+    print(f"Строки, содержащие '{keyword}', сохранены в {keyword}_{filename}.")
 
 
-find_keyword('s', 'error')
+find_keyword("s", "error")
 # File not found: [Errno 2] No such file or directory: 's'
 
-find_keyword('system_log.txt', 'error')
+find_keyword("system_log.txt", "error")
 # Строки, содержащие 'error', сохранены в error_system_log.txt.

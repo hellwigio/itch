@@ -17,8 +17,8 @@
 Остаток: 35
 """
 
-summa = int(input('Введите сумму: '))
-nominal = int(input('Введите номинал купюры: '))
+summa = int(input("Введите сумму: "))
+nominal = int(input("Введите номинал купюры: "))
 
-print('Купюр нужно:', summa // nominal)
-print('Остаток:', summa % nominal)
+print("Купюр нужно:", summa // nominal)
+print("Остаток:", summa % nominal)

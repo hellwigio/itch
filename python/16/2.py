@@ -1,4 +1,4 @@
-""" 02 Правильные скобки
+"""02 Правильные скобки
 
 Напишите программу, которая
 - принимает строку, содержащую любые виды скобок
@@ -21,10 +21,12 @@
 {[)(()]}: False
 ({[): False
 """
+
 from collections import deque
 
-LEFT_BRACKETS = '([{'
-RIGHT_BRACKETS = ')]}'
+LEFT_BRACKETS = "([{"
+RIGHT_BRACKETS = ")]}"
+
 
 def check_brackets(string):
     stack = deque()
@@ -59,5 +61,3 @@ test_cases = [
 
 for test_case in test_cases:
     print(f"{test_case}: {check_brackets(test_case)}")
-
-

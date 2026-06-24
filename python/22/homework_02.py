@@ -1,4 +1,4 @@
-""" 02 Статистика продаж
+"""02 Статистика продаж
 
 Дан двумерный массив продаж (список тюплов): (товар, количество, цена).
 
@@ -26,10 +26,16 @@ sales = [
     ("Mouse", 50, 20),
     ("Keyboard", 30, 50),
     ("Monitor", 10, 300),
-    ("Chair", 20, 800)
+    ("Chair", 20, 800),
 ]
 
-sample = {'Chair': 16000, 'Laptop': 6000, 'Monitor': 3000, 'Keyboard': 1500, 'Mouse': 1000}
+sample = {
+    "Chair": 16000,
+    "Laptop": 6000,
+    "Monitor": 3000,
+    "Keyboard": 1500,
+    "Mouse": 1000,
+}
 
 
 def calculate_sales(sales):

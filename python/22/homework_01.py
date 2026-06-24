@@ -1,4 +1,4 @@
-""" 01 Выбор заказов
+"""01 Выбор заказов
 
 У вас есть список заказов.
 Каждый заказ содержит название продукта и его цену.
@@ -21,16 +21,17 @@ orders = [
 ['Chair', 'Laptop']
 
 """
+
 orders = [
     {"product": "Laptop", "price": 1200},
     {"product": "Mouse", "price": 50},
     {"product": "Keyboard", "price": 100},
     {"product": "Monitor", "price": 300},
     {"product": "Chair", "price": 800},
-    {"product": "Desk", "price": 400}
+    {"product": "Desk", "price": 400},
 ]
 
-sample = ['Chair', 'Laptop']
+sample = ["Chair", "Laptop"]
 
 
 def select_expensive_orders(ords):

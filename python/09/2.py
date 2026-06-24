@@ -7,7 +7,7 @@
 #
 # Введите число: 5
 
-inp = int(input('Введите число: ')) + 1
+inp = int(input("Введите число: ")) + 1
 
 for i in range(1, inp):
     for j in range(1, i + 1):

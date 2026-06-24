@@ -21,6 +21,7 @@ students = [
 
 from collections import defaultdict
 
+
 def get_students_groups(students):
     groups = defaultdict(list)
 
@@ -30,8 +31,13 @@ def get_students_groups(students):
     return dict(groups)
 
 
-students = [("class1", "Alice"), ("class2", "Bob"), ("class1", "Charlie"), ("class3", "Daisy")]
-sample = {'class1': ['Alice', 'Charlie'], 'class2': ['Bob'], 'class3': ['Daisy']}
+students = [
+    ("class1", "Alice"),
+    ("class2", "Bob"),
+    ("class1", "Charlie"),
+    ("class3", "Daisy"),
+]
+sample = {"class1": ["Alice", "Charlie"], "class2": ["Bob"], "class3": ["Daisy"]}
 
 print(get_students_groups(students))
 print(get_students_groups(students) == sample)

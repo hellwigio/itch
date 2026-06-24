@@ -1,4 +1,4 @@
-""" 02 Поиск и удаление дубликатов
+"""02 Поиск и удаление дубликатов
 
 Напишите программу, которая
 - удаляет дублирующиеся строки из файла
@@ -20,7 +20,9 @@
 Дубликаты удалены. Уникальные строки сохранены в unique_movies_to_watch.txt.
 
 """
+
 import os
+
 
 def remove_duplicates(filename: str) -> None:
     if not os.path.isfile(filename):
@@ -28,17 +30,16 @@ def remove_duplicates(filename: str) -> None:
         return
 
     unique_lines = []
-    with open(filename, 'r') as source:
+    with open(filename, "r") as source:
         for line in source:
             if line not in unique_lines:
                 unique_lines.append(line)
 
-    with open(f'unique_{filename}', 'w') as output:
+    with open(f"unique_{filename}", "w") as output:
         for line in unique_lines:
             output.write(line)
 
-    print(f'Дубликаты удалены. Уникальные строки сохранены в unique_{filename}.')
-
+    print(f"Дубликаты удалены. Уникальные строки сохранены в unique_{filename}.")
 
 
 remove_duplicates("movies_to_watch.txt")

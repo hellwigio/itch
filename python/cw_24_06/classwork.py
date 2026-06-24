@@ -15,10 +15,12 @@ print_result(
 # 2. Пользователи из Mexico, у которых age = 27
 print_result(
     "2. Пользователи из Mexico, у которых age = 27",
-    collection.find({
-        "age": 27,
-        "native_country": " Mexico",
-    }),
+    collection.find(
+        {
+            "age": 27,
+            "native_country": " Mexico",
+        }
+    ),
 )
 
 
@@ -84,55 +86,65 @@ print_result(
 # 6. Возраст больше 18 и меньше 30
 print_result(
     "6. Пользователи, у которых age > 18 и age < 30",
-    collection.find({
-        "age": {
-            "$gt": 18,
-            "$lt": 30,
-        },
-    }),
+    collection.find(
+        {
+            "age": {
+                "$gt": 18,
+                "$lt": 30,
+            },
+        }
+    ),
 )
 
 
 # 7. education не равен " Bachelors"
 print_result(
     '7. Пользователи, у которых education != " Bachelors"',
-    collection.find({
-        "education": {
-            "$ne": " Bachelors",
-        },
-    }),
+    collection.find(
+        {
+            "education": {
+                "$ne": " Bachelors",
+            },
+        }
+    ),
 )
 
 
 # 8. Работает 45, 50 или 80 часов в неделю
 print_result(
     "8. Пользователи, которые работают 45, 50 или 80 часов в неделю",
-    collection.find({
-        "hours_per_week": {
-            "$in": [45, 50, 80],
-        },
-    }),
+    collection.find(
+        {
+            "hours_per_week": {
+                "$in": [45, 50, 80],
+            },
+        }
+    ),
 )
 
 
 # 9. НЕ работает 45, 50 или 80 часов в неделю
 print_result(
     "9. Пользователи, которые НЕ работают 45, 50 или 80 часов в неделю",
-    collection.find({
-        "hours_per_week": {
-            "$nin": [45, 50, 80],
-        },
-    }),
+    collection.find(
+        {
+            "hours_per_week": {
+                "$nin": [45, 50, 80],
+            },
+        }
+    ),
 )
 
 
 # 10. native_country = United-States ИЛИ income = >50K
 print_result(
     '10. Пользователи из United-States ИЛИ с income = ">50K"',
-    collection.find({
-        "$or": [
-            {"native_country": " United-States"},
-            {"income_bracket": " >50K"},
-        ],
-    }),
+    collection.find(
+        {
+            "$or": [
+                {"native_country": " United-States"},
+                {"income_bracket": " >50K"},
+            ],
+        }
+    ),
 )

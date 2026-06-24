@@ -20,6 +20,7 @@ collection = db.US_Adult_Income
 
 LIMIT = 10
 
+
 def print_result(title: str, result) -> None:
     print("\n" + "=" * 100)
     print(title)
@@ -28,8 +29,8 @@ def print_result(title: str, result) -> None:
     if isinstance(result, pymongo.synchronous.cursor.Cursor):
         result = list(result.limit(LIMIT))
 
-
     pprint(result)
+
 
 if __name__ == "__main__":
     print("UTILS")

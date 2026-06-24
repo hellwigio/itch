@@ -8,8 +8,8 @@
 # Введите вещественное число: 2.5
 # Округленное значение: 3
 
-number = float(input('Введите вещественное число: '))
+number = float(input("Введите вещественное число: "))
 
 result = number + 0.5 if number > 0 else number - 0.5
 
-print(f'Округленное значение: {int(result)}')
+print(f"Округленное значение: {int(result)}")

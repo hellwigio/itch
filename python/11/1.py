@@ -14,13 +14,12 @@ text = "My number is 123-456-789"
 
 print("Строка:", text)
 
-result = ''
+result = ""
 
 for letter in text:
     if letter.isdigit():
-        result += '*'
+        result += "*"
     else:
         result += letter
 
 print("Результат:", result)
-

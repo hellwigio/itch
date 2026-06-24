@@ -1,4 +1,4 @@
-""" 08 Проверка формата email
+"""08 Проверка формата email
 
 Напишите программу, которая проверяет
 - начинается ли строка с буквы,
@@ -13,11 +13,16 @@ email: user@example.com
 email = "user@example.com"
 print("email:", email)
 
-print("Корректный формат? ", email[0].isalpha() and "@" in email and email.endswith((".com", ".de")))
+print(
+    "Корректный формат? ",
+    email[0].isalpha() and "@" in email and email.endswith((".com", ".de")),
+)
 
 
 email = "1user@example.com"
 print("email:", email)
 
-print("Корректный формат? ", email[0].isalpha() and "@" in email and email.endswith((".com", ".de")))
-
+print(
+    "Корректный формат? ",
+    email[0].isalpha() and "@" in email and email.endswith((".com", ".de")),
+)

@@ -17,4 +17,3 @@ for s in inp:
         result += s
 
 print("Результат: ", result)
-

@@ -1,4 +1,4 @@
-""" 02 Фильтрация чисел по чётности
+"""02 Фильтрация чисел по чётности
 
 Напишите функцию filter_type, которая
 - принимает первый аргумент ("even" или "odd")
@@ -15,8 +15,10 @@ print(filter_numbers("prime", 2, 3, 5, 7))
 Некорректный фильтр
 """
 
+
 def is_even(n):
     return n % 2 == 0
+
 
 def is_odd(n):
     return n % 2 != 0
@@ -31,6 +33,6 @@ def filter_numbers(filter_type, *numbers):
         return "Некорректный фильтр"
 
 
-print(filter_numbers("even", 1, 2, 3, 4, 5, 6))   # [2, 4, 6]
-print(filter_numbers("odd", 10, 15, 20, 25))      # [15, 25]
-print(filter_numbers("prime", 2, 3, 5, 7))        # Некорректный фильтр
+print(filter_numbers("even", 1, 2, 3, 4, 5, 6))  # [2, 4, 6]
+print(filter_numbers("odd", 10, 15, 20, 25))  # [15, 25]
+print(filter_numbers("prime", 2, 3, 5, 7))  # Некорректный фильтр

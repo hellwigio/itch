@@ -49,18 +49,20 @@ file_list = []
 for root, dirs, files in os.walk(absolute_path):
     for file in files:
         if file.endswith(extension):
-            file_list.append(root + '/' + file)
+            file_list.append(root + "/" + file)
 
 if len(file_list) == 0:
-    print(f'Не найдено файлов с расширением {extension}.')
+    print(f"Не найдено файлов с расширением {extension}.")
     exit(0)
 
-choice = input(f'Найдено {len(file_list)} файлов с расширением {extension}, удалить? (y/n): ').lower()
+choice = input(
+    f"Найдено {len(file_list)} файлов с расширением {extension}, удалить? (y/n): "
+).lower()
 
-if choice == 'y':
+if choice == "y":
     for file in file_list:
         os.remove(file)
 
-    print(f'Удаление завершено.')
+    print(f"Удаление завершено.")
 else:
-    print('Отмена.')
+    print("Отмена.")

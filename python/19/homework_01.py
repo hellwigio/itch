@@ -1,4 +1,4 @@
-""" 01 Реверс словаря
+"""01 Реверс словаря
 
 Напишите программу, которая
 - меняет местами ключи и значения в словаре.
@@ -17,9 +17,9 @@ data = {"a": 1, "b": 2, "c": 1, "d": 3}
 
 inverted_dict = {}
 for k, v in data.items():
-       if not v in inverted_dict:
-              inverted_dict[v] = []
+    if not v in inverted_dict:
+        inverted_dict[v] = []
 
-       inverted_dict[v].append(k)
+    inverted_dict[v].append(k)
 
 print("Перевернутый словарь:", inverted_dict)

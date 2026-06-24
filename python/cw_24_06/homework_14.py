@@ -7,11 +7,10 @@ adult_income = db.US_Adult_Income
 
 # 1. Из коллекции customers выяснить, из какого города "Sven Ottlieb"
 print_result(
-    "1. Из коллекции customers выяснить, из какого города \"Sven Ottlieb\"", 
+    '1. Из коллекции customers выяснить, из какого города "Sven Ottlieb"',
     customers.find(
-        {"ContactName": "Sven Ottlieb"}, 
-        {"_id": 0, "ContactName": 1, "City": 1}
-    )
+        {"ContactName": "Sven Ottlieb"}, {"_id": 0, "ContactName": 1, "City": 1}
+    ),
 )
 
 
@@ -30,9 +29,7 @@ print_result(
 # 3. Из 2 задачи выясните, сколько человек имеют такой же возраст
 max_age = oldest_person["age"]
 
-same_age_count = adult_income.count_documents(
-    {"age": max_age}
-)
+same_age_count = adult_income.count_documents({"age": max_age})
 
 print_result(
     "3. Сколько человек имеют такой же возраст",

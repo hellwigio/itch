@@ -1,7 +1,7 @@
 # Обновление цен товаров
 #
 # Дан список товаров с ценами. Программа должна применить скидку
-# к каждому товару и добавить в список элемент с новой ценой. 
+# к каждому товару и добавить в список элемент с новой ценой.
 # В конце вывести таблицу с новой ценой.
 #
 # Данные:
@@ -38,9 +38,11 @@ percent = 17
 
 for i, v in enumerate(products):
     v.append(v[1] * (1 - percent / 100))
-    
+
 
 print(header_template.format("Товар", "Старая цена", "Новая цена"))
 
 for product, price, nprice in products:
-    print(row_template.format(product.ljust(NAME, '.'), f"${price:.2f}", f"${nprice:.2f}"))
+    print(
+        row_template.format(product.ljust(NAME, "."), f"${price:.2f}", f"${nprice:.2f}")
+    )

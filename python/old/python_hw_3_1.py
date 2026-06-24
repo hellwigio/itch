@@ -20,9 +20,9 @@
 Стоимость поездки: 72.0
 """
 
-distance = float(input('Введите расстояние (км): '))
-consumption = float(input('Введите расход топлива (л на 100 км): '))
-price = float(input('Введите цену топлива за литр: '))
+distance = float(input("Введите расстояние (км): "))
+consumption = float(input("Введите расход топлива (л на 100 км): "))
+price = float(input("Введите цену топлива за литр: "))
 
-print('Для поездки потребуется топлива:', distance / 100 * consumption)
-print('Стоимость поездки:', distance / 100 * consumption * price)
+print("Для поездки потребуется топлива:", distance / 100 * consumption)
+print("Стоимость поездки:", distance / 100 * consumption * price)

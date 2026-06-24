@@ -13,6 +13,6 @@ result = 0
 
 while ns > 0:
     result += ns % 10
-    ns = int(ns/ 10)
+    ns = int(ns / 10)
 
 print("Сумма цифр:", result)

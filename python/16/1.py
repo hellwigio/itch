@@ -1,4 +1,4 @@
-""" 01 Оценки текстом
+"""01 Оценки текстом
 
 Напишите программу, которая
 - преобразует список оценок по системе от 1 до 5 в текстовое представление.
@@ -15,13 +15,15 @@ grades = [5, 3, 4, 2, 1, 5, 3]
 
 grades = [5, 3, 4, 2, 1, 5, 3]
 
+
 def text_by_grade(grade):
     match grade:
         case 5:
-            return 'отлично'
+            return "отлично"
         case 3 | 4:
-            return 'хорошо'
+            return "хорошо"
         case _:
-            return 'неудовлетворительно'
+            return "неудовлетворительно"
+
 
 print([[grade, text_by_grade(grade)] for grade in grades])

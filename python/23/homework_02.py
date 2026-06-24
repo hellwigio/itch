@@ -1,4 +1,4 @@
-""" 02 Сумма вложенных чисел
+"""02 Сумма вложенных чисел
 
 Напишите функцию, которая
 - принимает список словарей, где каждый словарь содержит
@@ -17,13 +17,16 @@ data = [
 Пример вывода:
 Итоговый балл: 156
 """
+
 data = [
     {"name": "Alice", "scores": [10, 20, 30]},
     {"name": "Bob", "scores": [5, 15, 25]},
-    {"name": "Charlie", "scores": [7, 17, 27]}
+    {"name": "Charlie", "scores": [7, 17, 27]},
 ]
+
 
 def sum_nested_scores(data: list[dict]) -> int:
     return sum([sum(x["scores"]) for x in data])
+
 
 print(f"Итоговый балл: {sum_nested_scores(data)}")

@@ -33,7 +33,7 @@
 import os
 import sys
 
-workdir = '.'
+workdir = "."
 
 
 if len(sys.argv) > 1:
@@ -51,7 +51,7 @@ for root, dirs, files in os.walk(absolute_path):
         file_list.append(file)
 
 
-print(f'Содержимое директории {absolute_path}:')
+print(f"Содержимое директории {absolute_path}:")
 
 print("\n\nПапки:\n")
 

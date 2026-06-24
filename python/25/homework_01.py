@@ -1,4 +1,4 @@
-""" 01 Деление без ошибок
+"""01 Деление без ошибок
 
 Напишите функцию, которая
 - выполняет деление двух чисел, введенных пользователем,
@@ -22,6 +22,7 @@
 
 """
 
+
 def safe_division(dividend, divisor):
     try:
         result = dividend / divisor
@@ -31,11 +32,12 @@ def safe_division(dividend, divisor):
     except Exception:
         print("Ошибка: Введено некорректное число.")
 
+
 # Пример вызова функции
-safe_division('a', 5)       # False
-safe_division(5, 0)         # False
-safe_division(5, 2)         # True
-safe_division('5.5', '1.2') # True
+safe_division("a", 5)  # False
+safe_division(5, 0)  # False
+safe_division(5, 2)  # True
+safe_division("5.5", "1.2")  # True
 
 # Ошибка: Введено некорректное число.
 # Ошибка: Деление на ноль невозможно.
